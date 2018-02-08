@@ -10,13 +10,29 @@ use Illuminate\Auth\Middleware\Authenticate;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/index', 'CornController@show');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::redirect('/', '/index');
+
+Route::get('/index',
+    [
+        'as' => 'mainPage',
+        'middleware' => 'auth',
+        'uses' => 'CornController@show'
+    ]);
+
+Route::get('/logout', [
+    'uses' => function() {
+            Auth::logout();
+            return redirect()->route('mainPage');
+        },
+    'as' => 'logout',
+]);
+
+// нейро роут
+Route::get('/adddeal',  [
+   'uses' => 'CornController@addDeal',
+    'middleware' => 'auth',
+   'as' => 'addDeal'
+]);
 

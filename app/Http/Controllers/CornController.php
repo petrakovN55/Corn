@@ -9,12 +9,14 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class CornController extends Controller
 {
-    protected $redirectTo = '/welcome';
     public function show () {
         $corns = Corn::all();
-//        echo $corns;
         return view('index',  [
             'corns'=>$corns
         ]);
+    }
+
+    public function addDeal() {
+        return view( 'addDeal');
     }
 }
