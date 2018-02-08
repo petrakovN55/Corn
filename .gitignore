@@ -8,5 +8,12 @@
 Homestead.json
 Homestead.yaml
 npm-debug.log
-yarn-error.log
 .env
+/bootstrap
+/storage
+/tests
+/artisan
+/composer.lock
+/readme.md
+/public_html/files/
+/public_html/swf/
