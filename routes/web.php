@@ -36,3 +36,9 @@ Route::get('/adddeal',  [
    'as' => 'addDeal'
 ]);
 
+Route::post('/insert',[
+    'as' => 'add',
+    'middleware' => 'auth',
+    'uses' => 'CornController@addDeal_DB'
+]);
+
