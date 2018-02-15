@@ -19,9 +19,7 @@ class CornController extends Controller
     public function addDeal() {
         $corns = DB::table('corn')->where('worker','Ломакин')->get();
 
-        return view( 'addDeal',[
-            'corns' => $corns
-        ]);
+        return view( 'addDeal');
     }
 
 }

@@ -146,10 +146,6 @@
     </div>
     </body>
 
-    @foreach($corns as $corn)
-        {{$corn -> close}}
-    @endforeach
-
 <script>
     function calc_total(){
         var sum = 0;
