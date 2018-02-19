@@ -29,16 +29,23 @@ Route::get('/logout', [
     'as' => 'logout',
 ]);
 
-// нейро роут
+
+
 Route::get('/adddeal',  [
-   'uses' => 'CornController@addDeal',
+   'uses' => 'DealController@create',
     'middleware' => 'auth',
-   'as' => 'addDeal'
+   'as' => 'Deal',
 ]);
 
-Route::post('/insert',[
-    'as' => 'add',
+
+Route::get('/month', [
+    'uses' => 'CornController@analiz',
     'middleware' => 'auth',
-    'uses' => 'CornController@addDeal_DB'
+    'as' => 'month',
 ]);
+//Route::post('/insert',[
+//    'as' => 'add',
+//    'middleware' => 'auth',
+//    'uses' => 'CornController@addDeal_DB'
+//]);
 
